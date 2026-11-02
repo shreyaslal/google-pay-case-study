@@ -90,7 +90,36 @@ The student sets one monthly budget, and Google Pay keeps it visible at the mome
 
 **MVP scope (phase 1):** steps 1–4 and 6, using only Google Pay transactions and UPI Circle. **Not in the MVP:** Account Aggregator linking, credit offers, and anything that blocks or delays a payment.
 
-## 6. Success metrics
+## 6. Business model: how Pocket Mode pays for itself
+
+Pocket Mode is free to students, and it earns its keep by moving Google Pay's revenue away from payments, which earn almost nothing, toward financial services.
+
+**Why payments alone don't pay.** UPI has a zero merchant discount rate (MDR), so apps earn nothing directly on a payment; the government instead pays processors a subsidy of ₹1,500 crore (FY2024-25) ([Digital in Asia](https://digitalinasia.com/upi-revenue-problem-india-digital-payments/)). Google Pay India's revenue has stayed flat at about ₹1,400–1,550 crore for five years, ₹1,547 crore in FY25, with net profit halving to ₹50 crore ([Storyboard18](https://storyboard18.com/digital/google-pay-india-reports-flat-rs-1547-crore-revenue-in-fy25-as-net-profit-halves-to-rs-50-crore-89452.htm)). Meanwhile PhonePe's financial-services revenue grew 206% in FY2025 and now drives most of its profit ([Digital in Asia](https://digitalinasia.com/upi-revenue-problem-india-digital-payments/)). The money is in what comes after the payment.
+
+**Pricing decision: free, with no plans to charge.** 75% of UPI users say they would stop using UPI if any transaction fee were added ([LocalCircles survey via Outlook India](https://outlookindia.com/brand-studio/blogs/upi-on-the-edge-majority-of-users-may-abandon-platform-over-potential-transaction-fees)), and every competitor's spending summary is free. A paid budgeting tier would cap adoption at exactly the cohort we want to win.
+
+**Three ways Pocket Mode creates value for Google Pay:**
+
+| Lever | How Pocket Mode drives it | Signal to track |
+| --- | --- | --- |
+| Primary-app share | A budget that lives in Google Pay makes it the student's default app, so more of their payments (and data) flow through it | Share of a Pocket Mode user's UPI payments made in Google Pay |
+| Family acquisition | Each UPI Circle allowance brings in a parent as the primary user, often an established earner | Parents onboarded per student |
+| Financial-services funnel | A student who trusts Google Pay with their budget is the natural first customer for savings, the Flex credit card and loans after graduation | Conversion to a Google Pay financial product within 24 months |
+
+**Illustrative sizing (every input is an assumption to test in the pilot, not a forecast):**
+
+| Step | Assumption | Result |
+| --- | --- | --- |
+| Student UPI users (section 2) | ~3 crore | 3 crore |
+| Adopt Pocket Mode in year 1 | 5% | 15 lakh students |
+| Take a Google Pay financial product within 2 years | 10% | 1.5 lakh customers |
+| Annual revenue per financial-product customer | R (unknown; set from internal data) | 1.5 lakh × R |
+
+At an illustrative R of ₹1,000 a year, that is about ₹15 crore a year, roughly 1% of Google Pay India's FY25 revenue, from one student cohort. The cohort renews every year, and the customers stay for decades. The pilot's job is to replace each assumption with a measured number.
+
+**Cost side:** the MVP reuses rails Google Pay already owns: its transaction history, UPI Circle and the Ask Google Pay assistant. The main costs are engineering time and the regulated partner needed for Account Aggregator in phase 2, which is why phase 2 is gated on phase 1 results.
+
+## 7. Success metrics
 
 Success means students come back to their budget every week without paying less through Google Pay. Targets are set after a four-week baseline from the pilot, not guessed in advance.
 
@@ -105,7 +134,7 @@ Success means students come back to their budget every week without paying less 
 | Guardrail | Google Pay transactions per student | Budgeting could reduce spending; a large drop would hurt the core business |
 | Guardrail | Opt-out and privacy-complaint rate | Students and parents must trust the feature |
 
-## 7. Rollout and risks
+## 8. Rollout and risks
 
 Launch in four phases, each opening only when the previous one clears its gate.
 
@@ -124,7 +153,7 @@ Launch in four phases, each opening only when the previous one clears its gate.
 - **Parent-student tension.** Allowance visibility can feel like surveillance. *Mitigation:* parents see only totals against the allowance, never individual payments, unless the student chooses to share.
 - **Competitors copy it.** PhonePe can ship a pay-screen nudge quickly. *Mitigation:* the moat is the combination of Gemini in 10 languages, UPI Circle allowances and whole-picture data, which is harder to copy than any single feature.
 
-## 8. Validation plan
+## 9. Validation plan
 
 Before building anything, I will interview 10 NITK students to test the three assumptions this proposal rests on.
 
@@ -156,4 +185,7 @@ Before building anything, I will interview 10 NITK students to test the three as
 - [Careers360: AISHE 2023–24 enrolment](https://news.careers360.com/aishe-2023-24-higher-education-enrolment-reaches-4-50-crore-female-enrolment-rises-42-percentage-since-2014-15)
 - [Upstox: Finance Ministry UPI survey](https://upstox.com/news/business-news/latest-updates/upi-overtakes-cash-as-preferred-payment-mode-digital-transactions-jump-11-fold-since-2021-report/article-189492)
 - [IMDR Journal: multiple UPI apps as backup](https://imdr.edu/public/IMDR_JOURNAL_2023_24_Updated/files/basic-html/page158.html)
+- [Storyboard18: Google Pay India FY25 financials](https://storyboard18.com/digital/google-pay-india-reports-flat-rs-1547-crore-revenue-in-fy25-as-net-profit-halves-to-rs-50-crore-89452.htm)
+- [Digital in Asia: UPI zero-MDR and the revenue gap](https://digitalinasia.com/upi-revenue-problem-india-digital-payments/)
+- [Outlook India: LocalCircles survey on UPI fees](https://outlookindia.com/brand-studio/blogs/upi-on-the-edge-majority-of-users-may-abandon-platform-over-potential-transaction-fees)
 - [Business Today: How Urban India Pays survey](https://www.businesstoday.in/personal-finance/story/3-in-4-urban-indians-use-payment-apps-for-investments-insurance-or-credit-report-561522-2026-10-14)
