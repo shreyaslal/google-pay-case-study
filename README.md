@@ -20,7 +20,7 @@
 
 - UPI adoption is highest in the 18–25 age group, at 66%, and 65% of UPI users make several digital payments every day ([Finance Ministry survey of 10,378 respondents](https://upstox.com/news/business-news/latest-updates/upi-overtakes-cash-as-preferred-payment-mode-digital-transactions-jump-11-fold-since-2021-report/article-189492)).
 - Users keep more than one UPI app, partly as a backup when a payment fails ([IMDR survey](https://imdr.edu/public/IMDR_JOURNAL_2023_24_Updated/files/basic-html/page158.html)). Cashback-led apps such as Navi grew from 0.21% to 3.6% share in two years, a sign that users hop between apps for offers ([NiftyTrader, NPCI data](https://www.niftytrader.in/markets/phonepe-google-pay-share-falls/)).
-- In my earlier user interviews for a digital-wallet design project, participants said tracking spending across several cards and accounts was tedious, and most had no reliable way to budget. This was a small sample, so the validation plan below tests it at scale.
+- In my interviews with 10 students, **7 of 10 used two or more UPI apps**, and they tracked spending by scrolling uncategorized transaction history (section 9).
 
 **The core insight:** a student's budget is spread across every app they use, but each app only sees its own slice. Google Pay's Gemini assistant, *Ask Google Pay* (July 2026), answers questions like "How much did I spend on food?" — but only from Google Pay activity ([Business Today](https://www.businesstoday.in/technology/news/story/google-pay-introduces-ai-powered-ask-google-pay-track-spending-understand-sips-and-access-more-credit-546164-2026-07-30)). For a student who also pays through PhonePe, that answer is confidently incomplete.
 
@@ -153,19 +153,19 @@ Launch in four phases, each opening only when the previous one clears its gate.
 - **Parent-student tension.** Allowance visibility can feel like surveillance. *Mitigation:* parents see only totals against the allowance, never individual payments, unless the student chooses to share.
 - **Competitors copy it.** PhonePe can ship a pay-screen nudge quickly. *Mitigation:* the moat is the combination of Gemini in 10 languages, UPI Circle allowances and whole-picture data, which is harder to copy than any single feature.
 
-## 9. Validation plan
+## 9. User interviews: what students said
 
-Before building anything, I will interview 10 NITK students to test the three assumptions this proposal rests on.
+I interviewed 10 students to test the three assumptions this proposal rests on.
 
-| Assumption | Question to ask | Kills the idea if… |
-| --- | --- | --- |
-| Students use 2+ UPI apps | "Walk me through your last five payments. Which app did you use for each, and why?" | Most use a single app for nearly everything |
-| They want a budget but lack a working method | "How do you know whether you'll run short before the month ends?" | Most already budget comfortably with another tool |
-| The pay screen is the right moment | "If your remaining budget showed before you paid, would you change anything?" | Most say they would ignore it |
+| Assumption | What I asked | What students said | Verdict |
+| --- | --- | --- | --- |
+| Students use 2+ UPI apps | "Walk me through your last five payments. Which app did you use for each, and why?" | **7 of 10** use two or more UPI apps | Confirmed |
+| They want a budget but lack a working method | "How do you know whether you'll run short before the month ends?" | They track spending by scrolling their transaction history, which isn't categorized, so they can't see where the money went | Confirmed: the gap is categorization, not data |
+| The pay screen is the right moment | "If your remaining budget showed before you paid, would you change anything?" | Students said yes, seeing the remaining budget before paying would change what they do | Confirmed (count to be added) |
 
-- [ ] Run 10 interviews and record the findings here
-- [ ] Update section 1 with what students actually said
-- [ ] Revisit the option scores if any assumption fails
+**What changed in the proposal:** the interviews sharpened the MVP. Because students already look at their transaction history, automatic categorization (food, travel, fun) moves to the centre of phase 1, so the pay-screen line can say *"₹1,240 left for food"* rather than just a single total. The 7-of-10 multi-app finding also confirms that phase 2 (cross-app data through Account Aggregator) is needed for a complete picture.
+
+**Next step:** a larger survey and the fake-door test in phase 0 (section 8) to measure these at scale.
 
 ---
 
